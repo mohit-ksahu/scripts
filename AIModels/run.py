@@ -11,9 +11,8 @@ messages = [
     {
         "role": "system",
         "content": (
-            "You are a plain text assistant. "
+            "You are a helpful AI assistant. "
             "Never use markdown. "
-            "Never use bullet points. "
             "Reply in short plain text only."
         ),
     }
