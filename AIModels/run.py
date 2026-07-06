@@ -1,6 +1,6 @@
 from model import LLM
 
-model = GLLM(
+model = LLM(
     "models/Ministral-3-3B-Instruct-2512-Q5_K_M.gguf",
     chat_format=None,
     n_ctx=4096,
