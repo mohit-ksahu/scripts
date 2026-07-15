@@ -4,5 +4,5 @@ Random scripts I build for myself, shared here in case they're useful to someone
 
 ## Projects
 
-- **[AudioFX](./AudioFX)** — FFmpeg-based audio cleanup: silence removal, EQ, compression, and loudness normalization.
-- **[Whisper](./Whisper)** — Speech-to-text transcription using OpenAI Whisper via Hugging Face Transformers.
+- **[audioFx](./audioFx)** — FFmpeg-based audio cleanup: silence removal, EQ, compression, and loudness normalization.
+- **[whisper](./whisper)** — Speech-to-text transcription using OpenAI Whisper via Hugging Face Transformers.

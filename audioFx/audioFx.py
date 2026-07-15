@@ -1,10 +1,10 @@
 import subprocess
 import imageio_ffmpeg
 
-def audio_fx(input_path: str, output_path: str, remove_silence: bool = True, enhance: bool = True):
+def audioFx(inputPath: str, outputPath: str, removeSilence: bool = True, enhance: bool = True):
     filters = []
     
-    if remove_silence:
+    if removeSilence:
         filters.append(
             "silenceremove="
             "stop_periods=-1:"
@@ -25,7 +25,7 @@ def audio_fx(input_path: str, output_path: str, remove_silence: bool = True, enh
     cmd = [
         imageio_ffmpeg.get_ffmpeg_exe(), 
         "-y", 
-        "-i", input_path,
+        "-i", inputPath,
         "-ar", "48000",
         "-c:a", "aac",
         "-b:a", "384k",
@@ -35,5 +35,5 @@ def audio_fx(input_path: str, output_path: str, remove_silence: bool = True, enh
     if filters:
         cmd.extend(["-af", ",".join(filters)])
         
-    cmd.append(output_path)
+    cmd.append(outputPath)
     subprocess.run(cmd)
