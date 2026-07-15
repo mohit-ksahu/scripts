@@ -1,11 +1,11 @@
-from audio_fx import audio_fx
+from audioFx import audioFx
 
 def main():
     # You can decide exactly what to do by changing these to True or False!
-    audio_fx(
-        input_path="./audio.wav", 
-        output_path="output_final.m4a", 
-        remove_silence=True, 
+    audioFx(
+        inputPath="./audio.wav", 
+        outputPath="output_final.m4a", 
+        removeSilence=True, 
         enhance=True
     )
     print("Saved output_final.m4a")

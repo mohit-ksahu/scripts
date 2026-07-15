@@ -14,7 +14,7 @@ llama_cpp.llama_log_set(LOG_CALLBACK, ctypes.c_void_p())
 class LLM:
     def __init__(
         self,
-        model_path,
+        modelPath,
         n_ctx=4096,
         n_gpu_layers=10,
         flash_attn=True,
@@ -23,7 +23,7 @@ class LLM:
         **kwargs
     ):
         self.llm = Llama(
-            model_path=str(model_path),
+            model_path=str(modelPath),
             n_ctx=n_ctx,
             n_gpu_layers=n_gpu_layers,
             flash_attn=flash_attn,

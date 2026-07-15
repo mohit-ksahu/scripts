@@ -5,9 +5,9 @@ import tracemalloc
 import asyncio
 
 class PowerTracker:
-    def __init__(self, tdp=65.0, intensity_g_kwh=436.0, pue=1.2):
+    def __init__(self, tdp=65.0, intensityGKwh=436.0, pue=1.2):
         self.tdp = tdp
-        self.intensity = intensity_g_kwh / 1000.0
+        self.intensity = intensityGKwh / 1000.0
         self.pue = pue
 
     def start(self):
@@ -20,17 +20,17 @@ class PowerTracker:
         diff = time.process_time() - self.cpu0
         cores = os.cpu_count() or 1
         
-        _, peak_mem_bytes = tracemalloc.get_traced_memory()
+        _, peakMemBytes = tracemalloc.get_traced_memory()
         tracemalloc.stop()
-        self.ram_gb = peak_mem_bytes / (1024 ** 3)
+        self.ramGb = peakMemBytes / (1024 ** 3)
         
-        self.cpu_usage = (diff / self.duration) * 100 if self.duration else 0.0
-        self.system_load = self.cpu_usage / cores
+        self.cpuUsage = (diff / self.duration) * 100 if self.duration else 0.0
+        self.systemLoad = self.cpuUsage / cores
         
-        cpu_energy = self.tdp * (self.system_load / 100) * (self.duration / 3600)
-        ram_energy = (self.ram_gb * 0.375) * (self.duration / 3600)
+        cpuEnergy = self.tdp * (self.systemLoad / 100) * (self.duration / 3600)
+        ramEnergy = (self.ramGb * 0.375) * (self.duration / 3600)
         
-        self.energy = (cpu_energy + ram_energy) * self.pue
+        self.energy = (cpuEnergy + ramEnergy) * self.pue
         self.co2 = self.energy * self.intensity
         
         return self.co2
@@ -49,21 +49,21 @@ class PowerTracker:
     async def __aexit__(self, *_):
         self.stop()
 
-def track_power(func=None, /, tdp=65.0, intensity_g_kwh=436.0, pue=1.2):
+def trackPower(func=None, /, tdp=65.0, intensityGKwh=436.0, pue=1.2):
     def decorator(f):
         if asyncio.iscoroutinefunction(f):
             @functools.wraps(f)
-            async def async_wrapper(*args, **kwargs):
-                t = PowerTracker(tdp=tdp, intensity_g_kwh=intensity_g_kwh, pue=pue)
+            async def asyncWrapper(*args, **kwargs):
+                t = PowerTracker(tdp=tdp, intensityGKwh=intensityGKwh, pue=pue)
                 async with t:
-                    result = await f(*args, **kwargs)
-                async_wrapper.tracker = t
+                     result = await f(*args, **kwargs)
+                asyncWrapper.tracker = t
                 return result
-            return async_wrapper
+            return asyncWrapper
         else:
             @functools.wraps(f)
             def wrapper(*args, **kwargs):
-                t = PowerTracker(tdp=tdp, intensity_g_kwh=intensity_g_kwh, pue=pue)
+                t = PowerTracker(tdp=tdp, intensityGKwh=intensityGKwh, pue=pue)
                 with t:
                     result = f(*args, **kwargs)
                 wrapper.tracker = t

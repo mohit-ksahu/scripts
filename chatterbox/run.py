@@ -11,8 +11,8 @@ def main():
     chatter.generate(
         model=model,
         text=text,
-        output_path="output.wav",
-        prompt_path="./audio.wav",
+        outputPath="output.wav",
+        promptPath="./audio.wav",
         norm_loudness=True,
         repetition_penalty=1.1,
         temperature=0.6

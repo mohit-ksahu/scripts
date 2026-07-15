@@ -45,9 +45,9 @@ print(tracker.energy)
 ### 3. Decorator
 
 ```python
-from carbon import track_power
+from carbon import trackPower
 
-@track_power
+@trackPower
 def my_task():
     sum(i * i for i in range(10_000_000))
 
@@ -64,15 +64,7 @@ After `.stop()` or exiting a `with` block:
 | Attribute | Type | Description |
 |---|---|---|
 | `duration` | float | Wall-clock time (s) |
-| `load` | float | System CPU utilisation (%) |
+| `systemLoad` | float | System CPU utilisation (%) |
 | `energy` | float | Estimated energy (Wh) |
 | `co2` | float | Carbon emissions (g CO₂e) |
 | `tdp` | float | TDP used for estimation (W) |
-
-
-
-## Run Demo
-
-```bash
-python3 run.py
-```
