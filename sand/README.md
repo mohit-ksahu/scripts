@@ -24,7 +24,7 @@ const image = sand({
   height: 8,
   colors: 3,
   density: 0.75,
-  symmetry: null, // Custom mirroring coordinates array (optional)
+  symmetry: null, // Custom coordinates array (optional)
 });
 ```
 
