@@ -1,4 +1,3 @@
-import os
 import time
 import asyncio
 from carbon import PowerTracker, trackPower
@@ -42,11 +41,25 @@ async def runTask():
     await asyncio.sleep(0.5)
 
 
+def runSyncTask():
+    tracker = PowerTracker()
+    tracker.start()
+    
+    total = sum(i * i for i in range(5_000_000))
+    time.sleep(0.1)
+    
+    tracker.stop()
+    return tracker
+
+
 async def main():
     await runTask()
-    printDashboard("Task", runTask.tracker)
+    printDashboard("Async Task (Decorator)", runTask.tracker)
     
-    exportToJson("Task", runTask.tracker)
+    syncTracker = runSyncTask()
+    printDashboard("Sync Task (Manual)", syncTracker)
+    
+    exportToJson("Async Task", runTask.tracker)
     print("\nExported to carbon.json")
 
 
