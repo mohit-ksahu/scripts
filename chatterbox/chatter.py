@@ -5,7 +5,7 @@ import torch
 import torchaudio as ta
 from chatterboxModel import ChatterboxModel
 
-def chunk_text(text, maxChars=250):
+def chunkText(text, maxChars=250):
     rawSegments = re.split(r'([.!?]+(?:\s+|$))', text.strip())
     sentences = []
     for idx in range(0, len(rawSegments) - 1, 2):
@@ -43,7 +43,7 @@ def generate(model, text, outputPath, promptPath=None, **genKwargs):
     outputPath = Path(outputPath)
     outputPath.parent.mkdir(parents=True, exist_ok=True)
         
-    chunks = chunk_text(text, maxChars=300)
+    chunks = chunkText(text, maxChars=300)
     if promptPath:
         promptPath = Path(promptPath)
         if not promptPath.exists():
