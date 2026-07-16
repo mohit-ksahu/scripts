@@ -78,7 +78,7 @@ function base(config) {
   const random = mulberry32(fnv1a(seed));
 
   const palette = Array.from({length: colors}, () => {
-    return hslToHex(random(), random() * 0.4 + 0.5, random() * 0.3 + 0.4);
+    return hslToHex(random(), random() * 0.7 + 0.3, random() * 0.5 + 0.25);
   });
 
   const map = Array.from({length: height}, () => Array(width).fill(null));
