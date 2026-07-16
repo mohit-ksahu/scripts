@@ -52,7 +52,7 @@ The `preset` parameter determines the trade-off between **encoding speed** and *
 | `veryfast` | Fast | Low | Live streaming with moderate CPU capability. |
 | `faster` | Moderately Fast | Moderately Low | Quick rendering. |
 | `fast` | Slightly Fast | Balanced-low | Fast video processing where you don't mind slightly larger files. |
-| **`medium`** | Balanced | Balanced | Standard encoding (default baseline for general use). |
+| `medium` | Balanced | Balanced | Standard encoding (default baseline for general use). |
 | `slow` | Slow | High (smaller files) | Recommended for archiving and final renders if you have time. |
 | `slower` | Very Slow | Very High | High-quality distribution encodes. |
 | `veryslow` | Extremely Slow | Maximum | Squeezing out the absolute last drops of compression quality. |
