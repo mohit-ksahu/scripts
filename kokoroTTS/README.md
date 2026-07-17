@@ -95,4 +95,4 @@ Voices in Kokoro-82M follow the convention `[language_prefix][gender]_[name]`.
 - **Male (`pm_`):** `pm_alex`, `pm_santa`
 
 > [!TIP]
-> You can blend two or more voices together by separating their IDs with a comma (e.g., `voice="af_bella,af_heart"`). This will automatically load and average their style vectors.
+> You can blend two or more voices together that automatically load and mix their style.
