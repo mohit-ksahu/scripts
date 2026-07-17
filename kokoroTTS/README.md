@@ -35,18 +35,6 @@ kokoroTTS.generate(
 )
 ```
 
-## API Reference
-
-### `kokoroTTS.model(lang_code, device=None)`
-
-Loads and returns the `KokoroModel`. Auto-detects device (CUDA, MPS, CPU).
-
-### `kokoroTTS.generate(model, text, outputPath, voice, speed, maxChars=500, **kwargs)`
-
-Generates text-to-speech audio:
-* Automatically splits input text into semantic chunks at sentence boundaries (up to 300 characters).
-* Executes inference on each chunk, concatenates the resulting audio arrays, and saves the output to `outputPath`.
-
 ## Supported Languages & Voices
 
 Voices in Kokoro-82M follow the convention `[language_prefix][gender]_[name]`.
