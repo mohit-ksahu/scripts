@@ -146,15 +146,22 @@ const symmetries = {
 
 // Wrapper that adds padding and background styling.
 function sand(config) {
-  const {symmetry, padding, background} = config;
+  const {symmetry, padding = 0, background} = config;
+
+  const innerWidth = Math.max(1, config.width - padding * 2);
+  const innerHeight = Math.max(1, config.height - padding * 2);
 
   const source = base({
     ...config,
-    symmetry: symmetries[symmetry] ? symmetries[symmetry](config.width, config.height) : null,
+    width: innerWidth,
+    height: innerHeight,
+    symmetry: symmetries[symmetry] ? symmetries[symmetry](innerWidth, innerHeight) : null,
   });
 
   return {
     ...source,
+    width: config.width,
+    height: config.height,
     ...draw(source, {padding, background}),
   };
 }
@@ -163,8 +170,8 @@ function sand(config) {
 sand.url = (seed) => {
   return sand({
     seed,
-    width: 8,
-    height: 8,
+    width: 10,
+    height: 10,
     colors: 2,
     density: 0.6,
     padding: 1,

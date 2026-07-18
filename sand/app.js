@@ -86,8 +86,7 @@ btnSvg.addEventListener('click', () => {
 
 btnPng.addEventListener('click', () => {
   const canvas = document.createElement('canvas');
-  const padding = parseInt(paddingInput.value, 10);
-  const size = Math.max(current.width + padding * 2, current.height + padding * 2);
+  const size = Math.max(current.width, current.height);
   current.canvas(canvas, Math.max(1, Math.floor(1024 / size)));
   download(canvas.toDataURL('image/png'), `${current.seed}.png`);
 });

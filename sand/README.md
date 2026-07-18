@@ -20,8 +20,8 @@ import { sand } from './index.js';
 
 const image = sand({
   seed: 'sand',
-  width: 8,
-  height: 8,
+  width: 10,
+  height: 10,
   colors: 3,
   density: 0.75,
   symmetry: null, // Custom coordinates array (optional)
@@ -35,8 +35,8 @@ import sand from './index.js';
 
 const styled = sand({
   seed: 'sand',
-  width: 8,
-  height: 8,
+  width: 10,
+  height: 10,
   colors: 3,
   density: 0.75,
   padding: 1,
