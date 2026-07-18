@@ -13,7 +13,7 @@ def chunkText(text, maxChars=500):
         punc = rawSegments[idx+1].strip()
         if sentence:
             sentences.append(sentence + punc)
-    if len(rawSegments) % 2 != 0 and rawSegments[-1].strip():
+    if rawSegments[-1].strip():
         sentences.append(rawSegments[-1].strip())
         
     chunks = []
