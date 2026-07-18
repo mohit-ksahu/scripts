@@ -15,7 +15,7 @@ def chunkText(text, maxChars=500):
             sentences.append(sentence + punc)
     if rawSegments[-1].strip():
         sentences.append(rawSegments[-1].strip())
-        
+
     chunks = []
     currentChunk = []
     currentLen = 0
@@ -29,7 +29,7 @@ def chunkText(text, maxChars=500):
         else:
             currentChunk.append(sentence)
             currentLen += sentenceLen + (1 if len(currentChunk) > 1 else 0)
-            
+
     if currentChunk:
         chunks.append(" ".join(currentChunk))
     return chunks
