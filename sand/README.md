@@ -74,11 +74,3 @@ const styled = sand({
 ### Helpers
 
 *   **`sand.url(seed)`**: Directly generates a styled avatar link from a text string.
-
-## Running the App
-
-To open the app in your browser:
-
-```bash
-npx serve .
-```
