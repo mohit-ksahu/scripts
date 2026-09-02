@@ -17,12 +17,13 @@ pip install -r requirements.txt
 
 ## API Usage
 
-Import `WhisperModel` from `whisperModel.py` to perform local audio transcription.
+Import `WhisperModel` from `model.py` to perform local audio transcription.
+Support parameters like `chunk_length_s` to enable continuous chunked transcription for longer audio files.
 
 ### 1. Initialization
 
 ```python
-from whisperModel import WhisperModel
+from model import WhisperModel
 
 # Initialize the model (defaults to openai/whisper-tiny)
 model = WhisperModel(model_name="openai/whisper-tiny")
