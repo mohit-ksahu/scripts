@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 import torch
-from whisperModel import WhisperModel
+from model import WhisperModel
 
 def main():
     import platform
