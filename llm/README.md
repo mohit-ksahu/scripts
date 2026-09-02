@@ -1,4 +1,4 @@
-# LLM GGUF
+# LLM
 
 Interact with GGUF language models completely locally on your machine using an interactive console chat loop built on `llama-cpp-python`.
 
@@ -18,12 +18,12 @@ pip install -r requirements.txt
 
 ## API Usage
 
-Import the `LLM` class from `models.py` to run local model inferences.
+Import the `LLM` class from `model.py` to run local model inferences.
 
 ### 1. Initialization
 
 ```python
-from models import LLM
+from model import LLM
 
 # Initialize the model with path and parameters
 model = LLM(

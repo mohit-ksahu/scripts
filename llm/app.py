@@ -1,4 +1,4 @@
-from models import LLM
+from model import LLM
 
 model = LLM(
     "models/Ministral-3-3B-Instruct-2512-Q5_K_M.gguf",
