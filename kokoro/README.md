@@ -1,6 +1,6 @@
 # Kokoro-82M TTS
 
-Generate high-quality, lightweight text-to-speech audio using Kokoro-82M.
+Generate high-quality text-to-speech audio using Kokoro-82M.
 
 ## Features
 

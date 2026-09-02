@@ -1,6 +1,6 @@
 # Breeze
 
-A lightweight, zero-dependency local text-to-speech runtime for **Breeze-TTS-2 (GGUF)**.
+A zero-dependency text-to-speech runtime for **Breeze-TTS-2 (GGUF)**.
 
 ---
 

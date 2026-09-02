@@ -1,10 +1,10 @@
 # LLM
 
-Interact with GGUF language models completely locally on your machine using an interactive console chat loop built on `llama-cpp-python`.
+Interact with GGUF language models on your hardware using an interactive console chat loop built on `llama-cpp-python`.
 
 ## Key Features
 
-- **Local Inference:** Run GGUF models locally on consumer hardware.
+- **Hardware Accelerated Inference:** Run quantized GGUF models efficiently across CPU and GPU backends.
 - **Conversational History:** Maintains context across message turns.
 - **Custom System Prompts:** Configure the behavior and personality of the model.
 - **Response Streaming:** Output responses token-by-token in real-time.
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ## API Usage
 
-Import the `LLM` class from `model.py` to run local model inferences.
+Import the `LLM` class from `model.py` to run model inferences.
 
 ### 1. Initialization
 

@@ -1,6 +1,6 @@
 # Sand
 
-A lightweight JavaScript library to generate unique pixel art patterns and avatars from text. 
+A JavaScript library to generate unique pixel art patterns and avatars from text. 
 
 Whether you need placeholder profile pictures, abstract game graphics, or unique visual designs, Sand turns any word or name into a beautiful, consistent layout.
 
@@ -9,7 +9,7 @@ Whether you need placeholder profile pictures, abstract game graphics, or unique
 * **Highly customizable**: Easily control colors, fill density, border padding, and background styling.
 * **Mirroring options**: Use built-in horizontal and vertical symmetry, or define your own coordinates.
 * **Modern formats**: Export directly as SVG, draw onto HTML5 Canvas, or generate a link to load in `<img>` tags.
-* **Lightweight**: Built in a single file (`index.js`) with zero external dependencies.
+* **Self-contained**: Built in a single file (`index.js`) with zero external dependencies.
 
 ## How to use
 
