@@ -1,12 +1,12 @@
 # Whisper
 
-Perform high-accuracy local speech-to-text transcription utilizing OpenAI's Whisper model via Hugging Face `transformers`. The pipeline automatically preprocesses input audio (resampling to 16kHz and mixing multi-channel files down to mono) and outputs word-level timestamps.
+Perform high-accuracy speech-to-text transcription utilizing OpenAI's Whisper model via Hugging Face `transformers`. The pipeline automatically preprocesses input audio (resampling to 16kHz and mixing multi-channel files down to mono) and outputs word-level timestamps.
 
 ## Key Features
 
 - **Automated Resampling & Mono Mixing:** Automatically downmixes multi-channel inputs and resamples incoming audio to 16kHz (matching Whisper's expected format).
 - **Flexible Device Selection:** Auto-detects device, supporting CUDA, CPU, and MPS.
-- **Local Model Caching:** Saves downloaded Hugging Face models in the local `models/` directory.
+- **Model Caching:** Saves downloaded Hugging Face models in the `models/` directory.
 
 ## Installation
 
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## API Usage
 
-Import `WhisperModel` from `model.py` to perform local audio transcription.
+Import `WhisperModel` from `model.py` to perform audio transcription.
 Support parameters like `chunk_length_s` to enable continuous chunked transcription for longer audio files.
 
 ### 1. Initialization
