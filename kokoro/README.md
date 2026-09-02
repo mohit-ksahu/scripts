@@ -20,13 +20,13 @@ pip install -r requirements.txt
 ## Quick Start
 
 ```python
-import kokoroTTS
+import tts
 
 # Load the model (automatically uses CUDA, MPS, or CPU)
-model = kokoroTTS.model(lang_code='a')
+model = tts.model(lang_code='a')
 
 # Generate audio from text (supports single voice or blended voices)
-kokoroTTS.generate(
+tts.generate(
     model=model,
     text="Hello, this is a test of Kokoro-82M voice synthesis.",
     outputPath="output.wav",

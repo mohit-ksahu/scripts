@@ -3,7 +3,7 @@ import platform
 from pathlib import Path
 import torch
 import torchaudio as ta
-from kokoroModel import KokoroModel
+from model import KokoroModel
 
 def chunkText(text, maxChars=500):
     rawSegments = re.split(r'([.!?]+(?:\s+|$))', text.strip())
