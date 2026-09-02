@@ -17,18 +17,18 @@ pip install -r requirements.txt
 
 ## API Usage
 
-You can initialize the model and synthesize text with voice cloning using the utilities in `chatter.py`.
+You can initialize the model and synthesize text with voice cloning using the utilities in `tts.py`.
 
 ### 1. Basic Speech Generation
 
 ```python
-import chatter
+import tts
 
 # Load the model (automatically uses CUDA, MPS, or CPU)
-model = chatter.model()
+model = tts.model()
 
 # Generate audio from text
-chatter.generate(
+tts.generate(
     model=model,
     text="Hello, this is a test of voice synthesis.",
     outputPath="output.wav"
@@ -40,11 +40,11 @@ chatter.generate(
 Pass a prompt WAV audio reference to clone a target speaker's voice:
 
 ```python
-import chatter
+import tts
 
-model = chatter.model()
+model = tts.model()
 
-chatter.generate(
+tts.generate(
     model=model,
     text="This synthesized speech will sound like the speaker in the prompt audio.",
     outputPath="output.wav",

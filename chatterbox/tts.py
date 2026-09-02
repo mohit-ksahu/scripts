@@ -3,7 +3,7 @@ import platform
 from pathlib import Path
 import torch
 import torchaudio as ta
-from chatterboxModel import ChatterboxModel
+from model import ChatterboxModel
 
 def chunkText(text, maxChars=250):
     rawSegments = re.split(r'([.!?]+(?:\s+|$))', text.strip())
