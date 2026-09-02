@@ -19,10 +19,10 @@ pip install -r requirements.txt
 
 ## Usage
 
-To compress a video, configure the parameters directly in `main.py` and execute it:
+To compress a video, configure the parameters directly in `app.py` and execute it:
 
 ```bash
-python main.py
+python app.py
 ```
 
 ## API Usage
